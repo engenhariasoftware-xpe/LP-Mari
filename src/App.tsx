@@ -158,7 +158,7 @@ function App() {
 
     try {
       // Endpoint do n8n
-      const response = await fetch('https://xpe-n8n-dsfzfte4a6cpf3a5.eastus-01.azurewebsites.net/webhook/b37c61a4-07ac-4882-bd16-00fd663d3b6a', {
+      const response = await fetch('https://xpe-n8n-dsfzfte4a6cpf3a5.eastus-01.azurewebsites.net/webhook-test/b37c61a4-07ac-4882-bd16-00fd663d3b6a', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
