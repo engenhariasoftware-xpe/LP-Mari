@@ -42,21 +42,34 @@ const linkifyText = (text: string, isUser: boolean) => {
   
   return parts.map((part, index) => {
     if (urlRegex.test(part)) {
-      return (
-        <a
-          key={index}
-          href={part}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`underline hover:no-underline transition-colors ${
-            isUser 
-              ? 'text-green-100 hover:text-white' 
-              : 'text-blue-400 hover:text-blue-300'
-          }`}
-        >
-          {part}
-        </a>
-      );
+      // Remove caracteres indesejados do início e fim do link
+      const cleanLink = part.replace(/^[().,]+|[().,]+$/g, '');
+      
+      // Se após a limpeza ainda temos um link válido
+      if (cleanLink && (cleanLink.startsWith('http://') || cleanLink.startsWith('https://'))) {
+        // Encontra os caracteres removidos do início e fim para renderizar separadamente
+        const startChars = part.match(/^[().,]+/)?.[0] || '';
+        const endChars = part.match(/[().,]+$/)?.[0] || '';
+        
+        return (
+          <React.Fragment key={index}>
+            {startChars}
+            <a
+              href={cleanLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`underline hover:no-underline transition-colors ${
+                isUser 
+                  ? 'text-green-100 hover:text-white' 
+                  : 'text-blue-400 hover:text-blue-300'
+              }`}
+            >
+              {cleanLink}
+            </a>
+            {endChars}
+          </React.Fragment>
+        );
+      }
     }
     return part;
   });
