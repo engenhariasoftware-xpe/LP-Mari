@@ -330,6 +330,7 @@ function App() {
                   <span className="text-green-500">e</span>
                 </span>
               </div>
+            </div>
             <div className="flex items-center space-x-4">
               <button
                 onClick={clearChat}
