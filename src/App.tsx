@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, MessageCircle, RotateCcw } from 'lucide-react';
+import { Send, MessageCircle, RotateCcw, Sparkles, Brain } from 'lucide-react';
 
 interface Message {
   id: string;
@@ -282,9 +282,42 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-violet-900 to-indigo-900 relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-violet-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '4s'}}></div>
+      </div>
+      
+      {/* Geometric Lines */}
+      <div className="absolute inset-0 opacity-30">
+        <svg className="w-full h-full" viewBox="0 0 1000 1000" fill="none">
+          <path d="M0 200 Q250 100 500 200 T1000 200" stroke="url(#gradient1)" strokeWidth="2" opacity="0.5"/>
+          <path d="M0 400 Q250 300 500 400 T1000 400" stroke="url(#gradient2)" strokeWidth="2" opacity="0.3"/>
+          <path d="M0 600 Q250 500 500 600 T1000 600" stroke="url(#gradient3)" strokeWidth="2" opacity="0.4"/>
+          <defs>
+            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0"/>
+              <stop offset="50%" stopColor="#8b5cf6" stopOpacity="1"/>
+              <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
+            </linearGradient>
+            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#a855f7" stopOpacity="0"/>
+              <stop offset="50%" stopColor="#a855f7" stopOpacity="1"/>
+              <stop offset="100%" stopColor="#a855f7" stopOpacity="0"/>
+            </linearGradient>
+            <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#7c3aed" stopOpacity="0"/>
+              <stop offset="50%" stopColor="#7c3aed" stopOpacity="1"/>
+              <stop offset="100%" stopColor="#7c3aed" stopOpacity="0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
       {/* Header */}
-      <header className="bg-gray-900 border-b border-gray-700 sticky top-0 z-50">
+      <header className="bg-black/20 backdrop-blur-xl border-b border-white/10 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo XPe */}
@@ -297,19 +330,16 @@ function App() {
                   <span className="text-green-500">e</span>
                 </span>
               </div>
-            </div>
-
-            {/* Botões do header */}
             <div className="flex items-center space-x-4">
               <button
                 onClick={clearChat}
-                className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors"
+                className="flex items-center space-x-2 px-4 py-2 text-purple-200 hover:text-white transition-colors"
                 title="Nova Conversa"
               >
                 <RotateCcw className="w-4 h-4" />
                 <span className="text-sm font-medium">Nova Conversa</span>
               </button>
-              <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full font-medium transition-colors">
+              <button className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
                 Matricule-se
               </button>
             </div>
@@ -318,40 +348,62 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
         {/* Título do Chat */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Chat com <span className="text-green-500">Mari</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 relative">
+            Chat com <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400">Mari</span>
+            <div className="absolute -top-2 -right-8">
+              <Sparkles className="w-8 h-8 text-purple-400 animate-pulse" />
+            </div>
           </h1>
           <p className="text-xl text-gray-300 mb-2">
-            Sua assistente inteligente especializada em educação
+            Sua assistente de IA especializada em educação
           </p>
-          <p className="text-gray-400">
-            Tire suas dúvidas sobre cursos, carreiras e muito mais
+          <p className="text-purple-200">
+            Descubra seu próximo passo profissional em segundos
           </p>
         </div>
 
         {/* Chat Container */}
-        <div className="bg-gray-800 rounded-2xl border border-gray-700 shadow-lg overflow-hidden max-w-4xl mx-auto">
+        <div className="bg-black/40 backdrop-blur-xl rounded-3xl border border-purple-500/30 shadow-2xl overflow-hidden max-w-4xl mx-auto relative">
+          {/* Glow effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-violet-500/10 rounded-3xl"></div>
+          
           {/* Chat Messages */}
-          <div className="h-96 overflow-y-auto p-6 space-y-4 bg-gray-800">
+          <div className="h-96 overflow-y-auto p-6 space-y-4 relative z-10">
             {messages.length === 0 && (
               <div className="text-center text-gray-400 py-8">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MessageCircle className="w-8 h-8 text-green-500" />
+                {/* AI Avatar */}
+                <div className="relative mx-auto mb-6 w-24 h-24">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-violet-500 rounded-full animate-pulse"></div>
+                  <div className="absolute inset-1 bg-black rounded-full flex items-center justify-center">
+                    <div className="text-white font-bold text-sm">
+                      <span className="text-purple-300">VAI</span>
+                      <br />
+                      <span className="text-purple-300 text-xs">POR</span>
+                      <span className="text-white text-2xl ml-1">AI</span>
+                    </div>
+                  </div>
+                  <div className="absolute -inset-2 bg-gradient-to-r from-purple-500/30 to-violet-500/30 rounded-full blur-lg"></div>
                 </div>
-                <p className="text-lg font-medium text-white">Olá! Sou a Mari 👋</p>
-                <p className="text-sm mt-2 mb-6">Sua assistente da XP Educação. Como posso te ajudar?</p>
+                
+                <h2 className="text-2xl font-bold text-white mb-2">UMA BOA PERGUNTA</h2>
+                <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400 mb-4">MUDA TUDO</h2>
+                
+                <div className="bg-black/50 backdrop-blur-sm rounded-2xl p-4 mb-6 border border-purple-500/20">
+                  <p className="text-white text-lg">E a Mari tem a resposta</p>
+                  <p className="text-white text-lg">certa para a sua carreira!</p>
+                </div>
                 
                 {/* Mensagem pré-pronta */}
                 {showPresetMessage && (
                   <div className="mt-6">
                     <button
                       onClick={handlePresetMessage}
-                      className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-medium transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 shadow-lg"
+                      className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-2xl hover:shadow-purple-500/50"
                     >
-                      {presetMessage}
+                      DESCUBRA SEU PRÓXIMO PASSO EM SEGUNDOS
                     </button>
                   </div>
                 )}
@@ -361,27 +413,27 @@ function App() {
             {messages.map((message) => (
               <div
                 key={message.id}
-                className={`flex ${message.isUser ? 'justify-end' : 'justify-start'} animate-fade-in`}
+                className={`flex ${message.isUser ? 'justify-end' : 'justify-start'} animate-fade-in relative`}
               >
                 <div
                   className={`max-w-[80%] rounded-2xl px-4 py-3 ${
                     message.isUser
-                      ? 'bg-green-500 text-white ml-4'
-                      : 'bg-gray-700 text-white mr-4 border border-gray-600'
+                      ? 'bg-gradient-to-r from-purple-600 to-violet-600 text-white ml-4 shadow-lg'
+                      : 'bg-black/60 backdrop-blur-sm text-white mr-4 border border-purple-500/30 shadow-lg'
                   }`}
                 >
                   {!message.isUser && (
                     <div className="flex items-center mb-2">
-                      <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-2">
-                        <MessageCircle className="w-3 h-3 text-white" />
+                      <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-violet-500 rounded-full flex items-center justify-center mr-2">
+                        <Brain className="w-3 h-3 text-white" />
                       </div>
-                      <span className="text-sm font-medium text-green-600">Mari</span>
+                      <span className="text-sm font-medium text-purple-300">Mari</span>
                     </div>
                   )}
                   <p className="text-sm leading-relaxed">
                     {linkifyText(message.text, message.isUser)}
                   </p>
-                  <span className={`text-xs opacity-60 mt-2 block ${message.isUser ? 'text-green-100' : 'text-gray-400'}`}>
+                  <span className={`text-xs opacity-60 mt-2 block ${message.isUser ? 'text-purple-100' : 'text-purple-200'}`}>
                     {message.timestamp.toLocaleTimeString('pt-BR', { 
                       hour: '2-digit', 
                       minute: '2-digit' 
@@ -393,17 +445,17 @@ function App() {
             
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-gray-700 rounded-2xl px-4 py-3 mr-4 border border-gray-600">
+                <div className="bg-black/60 backdrop-blur-sm rounded-2xl px-4 py-3 mr-4 border border-purple-500/30">
                   <div className="flex items-center space-x-2 mb-2">
-                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                      <MessageCircle className="w-3 h-3 text-white" />
+                    <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-violet-500 rounded-full flex items-center justify-center">
+                      <Brain className="w-3 h-3 text-white" />
                     </div>
-                    <span className="text-sm font-medium text-green-600">Mari</span>
+                    <span className="text-sm font-medium text-purple-300">Mari</span>
                   </div>
                   <div className="flex space-x-1">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
                   </div>
                 </div>
               </div>
@@ -412,7 +464,7 @@ function App() {
           </div>
 
           {/* Input Area */}
-          <div className="p-6 bg-gray-800 border-t border-gray-700">
+          <div className="p-6 bg-black/20 backdrop-blur-sm border-t border-purple-500/20 relative z-10">
             <div className="flex items-center space-x-3">
               <div className="flex-1 relative">
                 <input
@@ -422,14 +474,14 @@ function App() {
                   onChange={(e) => setInputText(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Digite sua pergunta..."
-                  className="w-full bg-gray-700 border border-gray-600 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
+                  className="w-full bg-black/50 backdrop-blur-sm border border-purple-500/30 rounded-xl px-4 py-3 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
                   disabled={isLoading}
                 />
               </div>
               <button
                 onClick={() => handleSendMessage()}
                 disabled={isLoading || !inputText.trim()}
-                className="bg-green-500 hover:bg-green-600 disabled:opacity-50 disabled:cursor-not-allowed text-white p-3 rounded-xl transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 disabled:opacity-50 disabled:cursor-not-allowed text-white p-3 rounded-xl transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-lg hover:shadow-purple-500/50"
               >
                 <Send className="w-5 h-5" />
               </button>
