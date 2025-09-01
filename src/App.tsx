@@ -388,8 +388,6 @@ function App() {
                   <div className="absolute -inset-2 bg-gradient-to-r from-purple-500/30 to-violet-500/30 rounded-full blur-lg"></div>
                 </div>
                 
-                <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400 mb-6">Vai por AI</h2>
-                
                 {/* Mensagem pré-pronta */}
                 {showPresetMessage && (
                   <div className="mt-6">
