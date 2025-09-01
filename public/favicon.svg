@@ -1,4 +1,14 @@
+
 <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
   <!-- Fundo escuro -->
-  <text x="16" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#22c55e">XPe</text>
+  <rect width="32" height="32" fill="#1a1a1a"/>
+  
+  <!-- X verde -->
+  <text x="8" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">X</text>
+  
+  <!-- P verde -->
+  <text x="16" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">P</text>
+  
+  <!-- e minúsculo branco com tamanho aumentado -->
+  <text x="24" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#22c55e">e</text>
 </svg>
