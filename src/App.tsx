@@ -87,7 +87,7 @@ function App() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Mensagem pré-pronta
-  const presetMessage = "Quero dar um salto na minha carreira. Pode me ajudar?";
+  const presetMessage = "Quero impulsionar minha carreira. Pode me ajudar?";
 
   // Função para gerar sessionId único e seguro
   const generateUniqueSessionId = () => {
@@ -322,14 +322,11 @@ function App() {
           <div className="flex items-center justify-between h-16">
             {/* Logo XPe */}
             <div className="flex items-center">
-              <div className="text-white">
-                <span className="text-xl font-bold text-white">Faculdade</span>
-                <br />
-                <span className="text-2xl font-bold">
-                  <span className="text-white">XP</span>
-                  <span className="text-green-500">e</span>
-                </span>
-              </div>
+              <img 
+                src="https://i.imgur.com/Tl07IFc.png" 
+                alt="XPe Logo" 
+                className="h-10 w-auto"
+              />
             </div>
             <div className="flex items-center space-x-4">
               <button
@@ -340,9 +337,14 @@ function App() {
                 <RotateCcw className="w-4 h-4" />
                 <span className="text-sm font-medium">Nova Conversa</span>
               </button>
-              <button className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+              <a 
+                href="https://www.xpeducacao.com.br/pos-graduacao"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
+              >
                 Matricule-se
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -360,9 +362,6 @@ function App() {
           </h1>
           <p className="text-xl text-gray-300 mb-2">
             Sua assistente de IA especializada em educação
-          </p>
-          <p className="text-purple-200">
-            Descubra seu próximo passo profissional em segundos
           </p>
         </div>
 
@@ -389,13 +388,7 @@ function App() {
                   <div className="absolute -inset-2 bg-gradient-to-r from-purple-500/30 to-violet-500/30 rounded-full blur-lg"></div>
                 </div>
                 
-                <h2 className="text-2xl font-bold text-white mb-2">UMA BOA PERGUNTA</h2>
-                <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400 mb-4">MUDA TUDO</h2>
-                
-                <div className="bg-black/50 backdrop-blur-sm rounded-2xl p-4 mb-6 border border-purple-500/20">
-                  <p className="text-white text-lg">E a Mari tem a resposta</p>
-                  <p className="text-white text-lg">certa para a sua carreira!</p>
-                </div>
+                <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-400 mb-6">Vai por AI</h2>
                 
                 {/* Mensagem pré-pronta */}
                 {showPresetMessage && (
@@ -404,7 +397,7 @@ function App() {
                       onClick={handlePresetMessage}
                       className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-2xl hover:shadow-purple-500/50"
                     >
-                      DESCUBRA SEU PRÓXIMO PASSO EM SEGUNDOS
+                      Quero impulsionar minha carreira. Pode me ajudar?
                     </button>
                   </div>
                 )}
