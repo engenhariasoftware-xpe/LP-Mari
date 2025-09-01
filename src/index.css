@@ -5,7 +5,7 @@
 /* Custom gradient backgrounds */
 @layer base {
   body {
-    background: linear-gradient(135deg, #1e1b4b 0%, #581c87 50%, #312e81 100%);
+    background: linear-gradient(135deg, #0f0a1e 0%, #1a0d2e 25%, #2d1b4e 50%, #1e0a3e 75%, #0a051a 100%);
   }
 }
 

@@ -317,13 +317,13 @@ function App() {
       </div>
 
       {/* Header */}
-      <header className="bg-black/20 backdrop-blur-xl border-b border-white/10 sticky top-0 z-50">
+      <header className="bg-gradient-to-r from-purple-950/80 via-indigo-950/80 to-purple-950/80 backdrop-blur-xl border-b border-purple-500/20 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo XPe */}
             <div className="flex items-center">
               <img 
-                src="https://i.imgur.com/Tl07IFc.png" 
+                src="https://imgur.com/a/xpe-Tl07IFc" 
                 alt="XPe Logo" 
                 className="h-10 w-auto"
               />
