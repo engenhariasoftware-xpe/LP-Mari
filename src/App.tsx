@@ -317,7 +317,7 @@ function App() {
       </div>
 
       {/* Header */}
-      <header className="bg-gradient-to-r from-purple-950/80 via-indigo-950/80 to-purple-950/80 backdrop-blur-xl border-b border-purple-500/20 sticky top-0 z-50">
+      <header className="bg-black/95 backdrop-blur-xl border-b border-gray-800/50 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo XPe */}
@@ -331,7 +331,7 @@ function App() {
             <div className="flex items-center space-x-4">
               <button
                 onClick={clearChat}
-                className="flex items-center space-x-2 px-4 py-2 text-purple-200 hover:text-white transition-colors"
+                className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors"
                 title="Nova Conversa"
               >
                 <RotateCcw className="w-4 h-4" />
@@ -341,7 +341,7 @@ function App() {
                 href="https://www.xpeducacao.com.br/pos-graduacao"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
+                className="bg-green-500 hover:bg-green-600 text-black px-6 py-2 rounded-full font-bold transition-all duration-300 shadow-lg hover:shadow-green-500/25"
               >
                 Matricule-se
               </a>
