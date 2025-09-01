@@ -322,11 +322,18 @@ function App() {
           <div className="flex items-center justify-between h-16">
             {/* Logo XPe */}
             <div className="flex items-center">
-              <img 
-                src="https://i.imgur.com/tmeEvag.png" 
-                alt="XPe Logo" 
-                className="h-10 w-auto"
-              />
+              <a 
+                href="https://www.xpeducacao.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-transform duration-200 hover:scale-105"
+              >
+                <img 
+                  src="https://i.imgur.com/tmeEvag.png" 
+                  alt="XPe Logo" 
+                  className="h-10 w-auto"
+                />
+              </a>
             </div>
             <div className="flex items-center space-x-4">
               <button
@@ -341,7 +348,7 @@ function App() {
                 href="https://www.xpeducacao.com.br/pos-graduacao"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-500 hover:bg-green-600 text-black px-6 py-2 rounded-full font-bold transition-all duration-300 shadow-lg hover:shadow-green-500/25"
+                className="bg-green-500 hover:bg-green-600 text-black px-6 py-2 rounded-full font-bold transition-all duration-300 shadow-lg hover:shadow-green-500/25 hover:scale-105"
               >
                 Matricule-se
               </a>
