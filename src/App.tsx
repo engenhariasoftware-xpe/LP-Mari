@@ -323,7 +323,7 @@ function App() {
             {/* Logo XPe */}
             <div className="flex items-center">
               <img 
-                src="https://imgur.com/a/xpe-Tl07IFc" 
+                src="https://imgur.com/a/2C0PeEQ" 
                 alt="XPe Logo" 
                 className="h-10 w-auto"
               />
