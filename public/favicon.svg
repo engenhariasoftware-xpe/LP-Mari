@@ -1,17 +1,10 @@
 <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-  <!-- Fundo preto -->
-  <rect width="32" height="32" fill="#000000"/>
+  <!-- Fundo escuro -->
+  <rect width="32" height="32" fill="#2a2a2a"/>
   
-  <!-- Logo XPe baseado na imagem oficial -->
-  <g transform="translate(2, 8) scale(0.8)">
-    <!-- Parte principal do X -->
-    <path d="M0 0 L8 8 L0 16 L4 16 L8 12 L12 16 L16 16 L8 8 L16 0 L12 0 L8 4 L4 0 Z" fill="#22c55e"/>
-    
-    <!-- Parte do P -->
-    <path d="M18 0 L18 16 L22 16 L22 10 L26 10 C28.2 10 30 8.2 30 6 L30 4 C30 1.8 28.2 0 26 0 Z M22 4 L22 6 L26 6 L26 4 Z" fill="#22c55e"/>
-    
-    <!-- Círculo do e -->
-    <circle cx="34" cy="12" r="3" fill="#22c55e"/>
-    <circle cx="34" cy="10" r="1.5" fill="#000000"/>
-  </g>
+  <!-- Letra X -->
+  <path d="M6 8 L12 16 L6 24 L8.5 24 L12.5 18.5 L16.5 24 L19 24 L13 16 L19 8 L16.5 8 L12.5 13.5 L8.5 8 Z" fill="#22c55e"/>
+  
+  <!-- Letra P -->
+  <path d="M21 8 L21 24 L23.5 24 L23.5 17 L26.5 17 C27.9 17 29 15.9 29 14.5 L29 10.5 C29 9.1 27.9 8 26.5 8 Z M23.5 10.5 L26.5 10.5 C26.8 10.5 27 10.7 27 11 L27 14 C27 14.3 26.8 14.5 26.5 14.5 L23.5 14.5 Z" fill="#22c55e"/>
 </svg>
